@@ -19,12 +19,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from ido device
-$(call inherit-product, device/xiaomi/ido/device.mk)
+$(call inherit-product, device/lenovo/zoom/device.mk)
 
 # Device identifier. This must come after all inclusions
-TARGET_VENDOR := Xiaomi
-PRODUCT_DEVICE := ido
-PRODUCT_NAME := full_ido
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 3
-PRODUCT_MANUFACTURER := Xiaomi
+TARGET_VENDOR := Lenovo
+PRODUCT_DEVICE := zoom
+PRODUCT_NAME := full_zoom
+PRODUCT_BRAND := Lenovo
+PRODUCT_MODEL := Lenovo Z90-3
+PRODUCT_MANUFACTURER := Lenovo

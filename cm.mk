@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/xiaomi/ido/full_ido.mk)
+$(call inherit-product, device/lenovo/zoom/full_zoom.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_ido
-BOARD_VENDOR := Xiaomi
+PRODUCT_NAME := cm_zoom
+BOARD_VENDOR := Lenovo
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+PRODUCT_GMS_CLIENTID_BASE := android-lenovo

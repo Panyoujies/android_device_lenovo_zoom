@@ -17,8 +17,8 @@
 
 set -e
 
-DEVICE=ido
-VENDOR=xiaomi
+DEVICE=zoom
+VENDOR=lenovo
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
