@@ -186,12 +186,21 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.lineout.sh \
-    init.qcom.bt.sh \
-    init.qcom.power.rc \
+    init.class_main.sh \
+    init.lenovo.crash.rc \
+    init.lenovo.log.rc \
+    init.lenovo.rc \
+    init.mdm.sh \
+    init.qcom.bms.sh \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.factory.rc \
     init.qcom.rc \
     init.qcom.sh \
+    init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.target.rc \
     ueventd.qcom.rc
 
 # Sensors

@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-# The DIAG device node is not world writable/readable.
+# the DIAG device node is not world writable/readable.
 /dev/diag                 0660   system     qcom_diag
 
 /dev/genlock              0666   system     system
@@ -48,7 +48,10 @@
 /dev/rmnet_ctrl           0660   usb        usb
 /dev/dpl_ctrl             0660   usb        usb
 
-# Permissions for CSVT
+# lenovo-sw zhangrc2 change NXP SmartPA mode begin
+/dev/i2c_smartpa              0660   media      media
+# lenovo-sw zhangrc2 change NXP SmartPA mode end
+#permissions for CSVT
 /dev/smd11                0660   radio      radio
 
 /dev/radio0               0640   system     system
@@ -125,7 +128,7 @@
 /dev/hw_random            0600   root       root
 /dev/adsprpc-smd          0664   system     system
 
-# Permissions for audio
+#permissions for audio
 /dev/audio_slimslave      0660   system     audio
 /dev/msm_qcelp            0660   system     audio
 /dev/msm_evrc             0660   system     audio
@@ -172,7 +175,7 @@
 /dev/tsc_mux0             0660   media       media
 /dev/tsc_ci0              0660   media       media
 
-# Sensors
+# sensors
 /sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
 /sys/devices/f9925000.i2c/i2c-0/0-*                 enable         0660    input    system
 /sys/devices/f9925000.i2c/i2c-0/0-*                 poll_delay     0660    input    system
@@ -195,25 +198,15 @@
 /sys/devices/virtual/input/input*                   poll           0660    input    system
 /sys/devices/virtual/input/input*                   pollrate_ms    0660    input    system
 
-# fpc1020 Fingerprint
-/sys/devices/soc.0/fpc1020*             enable_wakeup  0666    input     system
-/sys/devices/soc.0/fpc1020*             clk_enable     0660   system     system
-/sys/devices/soc.0/fpc1020*             hw_reset       0220   system     system
-/sys/devices/soc.0/fpc1020*             irq            0660   system     system
-/sys/devices/soc.0/fpc1020*             spi_prepare    0660   system     system
-
-# CTP
+# ctp
 /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0038/sensors/ft5x06-proximity	enable	0660	input	system
 /sys/devices/virtual/gesture/gesture*		enable	0660	input	system
 /sys/devices/virtual/gesture/gesture*		pocket	0660	input	system
 
-# LED
+# led
 /sys/devices/soc.0/78b5000.i2c/i2c-1/1-0045/leds/red		blink	0660	input	system
 /sys/devices/soc.0/78b5000.i2c/i2c-1/1-0045/leds/green		blink	0660	input	system
 /sys/devices/soc.0/78b5000.i2c/i2c-1/1-0045/leds/blue		blink	0660	input	system
-
-# FM
-/sys/module/radio_iris_transport/parameters/fmsmd_set 0660 system system
 
 # vm_bms
 /dev/vm_bms               0660   system     system
@@ -222,11 +215,13 @@
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
-
-# NFC permissions
+#nfc permissions
 /dev/nfc-nci              0660    nfc         nfc
 /dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
+
+#lenovo-sw lumy1 add for BRCM NFC
+/dev/bcm2079x		0660	nfc	nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -242,10 +237,10 @@
 # Ramdump devices
 /dev/ramdump*             0640   system     system
 
-# Improve Touch
+#Improve Touch
 /dev/hbtp_input           0660   system     system
 /dev/hbtp_vm              0660   system     system
 /dev/jdi-bu21150          0660   system     system
 
 # Add device block for FRP
-/dev/block/bootdevice/by-name/config    0660   system     system
+/dev/block/platform/soc.0/7824900.sdhci/by-name/config    0660   system     system

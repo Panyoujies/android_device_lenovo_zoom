@@ -1,0 +1,104 @@
+on post-fs
+    chown system system /sys/devices/soc.0/gpio_keys.69/camera_key
+
+service wlanmode_insmod /system/bin/insmod /system/lib/modules/wlan.ko con_mode=5
+    class main
+    disabled
+    oneshot
+
+service wlanmode_rmmod /system/bin/rmmod wlan
+    class main
+    disabled
+    oneshot
+
+service wlanmode_open /system/bin/ifconfig wlan0 up
+    class main
+    disabled
+    oneshot
+
+service wlanmode_close /system/bin/ifconfig wlan0 down
+    class main
+    disabled
+    oneshot
+
+service wlan_report /system/bin/sh /data/misc/wifitest/wlantest_report.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
+on property:wlan.test.load=1
+    start wlanmode_insmod
+
+on property:wlan.test.load=0
+    start wlanmode_rmmod
+
+on property:wlan.test.open=1
+    start wlanmode_open
+
+on property:wlan.test.open=0
+    start wlanmode_close
+
+on property:wlan.test.report=1
+    start wlan_report
+
+# [lenovo_fw,hurui1,framewowrk_root_channel],copy the cert add
+on property:sys.boot_completed=1
+    mkdir /data/wapi_certificate 0771 system system
+    retorecon /data/wapi_certificate
+
+service jcommand /system/bin/sh /system/bin/jcommand.sh
+	class main
+	disabled
+	oneshot
+# [lenovo_fw,hurui1,frameowrk_root_channel],end
+
+#Lenovo-sw chencheng6 for iwpriv command add 2015-04-27 begin
+on property:sys.iwpriv.action=1
+    start iwpriv
+
+service iwpriv /system/bin/iwpriv_cmd
+    user root
+    disabled
+    oneshot
+#Lenovo-sw chencheng6 for iwpriv command add 2015-04-27 end
+
+#for engineermode bt test
+service bt_duttest_on /system/xbin/bttool duton
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+
+service bt_duttest_off /system/xbin/bttool dutoff
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:bluetooth.duttest=true
+    start bt_duttest_on
+
+on property:bluetooth.duttest=false
+    start bt_duttest_off
+
+#for factory properties
+service wcg_mac_tool /system/bin/wcg_mac_tool
+   class late_start
+   user root
+   disabled
+   oneshot
+
+on property:sys.boot_completed=1
+    start wcg_mac_tool
+
+#for EngineerTest.apk bt rf test
+service bt_rf_test /system/bin/sh /system/etc/bt_rf_test.sh
+    class late_start
+    user root
+    group bluetooth
+    disabled
+    oneshot
+
