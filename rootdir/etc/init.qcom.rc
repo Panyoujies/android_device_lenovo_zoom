@@ -416,6 +416,10 @@ on post-fs-data
     # Sensor
     mkdir /persist/sensors 0770 system system
 
+    # Touchscreen
+    chown system radio /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0020/input/input0/wake_gesture
+    chmod 0664 /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0020/input/input0/wake_gesture
+
     #Create FM dir for patchdownloader
     mkdir /data/misc/fm 0770 system system
     chmod 0770 /data/misc/fm

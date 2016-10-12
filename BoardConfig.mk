@@ -87,6 +87,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc.0/78b9000.i2c/i2c-5/5-0020/input/input0/wake_gesture"
 
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
