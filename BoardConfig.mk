@@ -98,25 +98,11 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
-# Dex
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
-
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
-
-# FM
-AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Gps
 TARGET_NO_RPC := true
@@ -128,9 +114,6 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_zoom
 
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-
-# Malloc
-MALLOC_IMPL := dlmalloc
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -147,7 +130,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # blockdev --getbsz /dev/block/mmcblk0p19
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
-BOARD_POWER_CUSTOM_BOARD_LIB := libpower_zoom
 
 # Properties
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop

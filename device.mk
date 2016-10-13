@@ -111,11 +111,6 @@ PRODUCT_PACKAGES += \
     memtrack.msm8916 \
     liboverlay
 
-# FM
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
-
 # IPC Router Configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config

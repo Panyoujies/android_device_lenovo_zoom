@@ -2,3 +2,5 @@ allow init vfat:file read;
 allow init vfat:file { getattr open };
 
 allow init fpc_socket:sock_file create_file_perms;
+allow init sdcardd_exec:file { getattr read open };
+allow init firmware_file:dir { mounton };

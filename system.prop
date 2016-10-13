@@ -1,59 +1,3 @@
-# Art
-dalvik.vm.dex2oat-flags=--no-watch-dog
-ro.sys.fw.dex2oat_thread_count=4
-
-# Audio
-ro.qc.sdk.audio.fluencetype=fluence
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
-av.streaming.offload.enable=true
-audio.offload.buffer.size.kb=64
-audio.offload.gapless.enabled=true
-audio.offload.min.duration.secs=30
-audio.offload.pcm.16bit.enable=false
-audio.offload.pcm.24bit.enable=true
-use.voice.path.for.pcm.voip=true
-
-# Bluetooth
-bluetooth.hfp.client=1
-
-# Camera
-persist.camera.cpp.duplication=false
-
-# Display
-debug.sf.hw=0
-debug.egl.hw=0
-persist.hwc.mdpcomp.enable=true
-debug.mdpcomp.logs=0
-debug.composition.type=c2d
-dev.pm.dyn_samplingrate=1
-persist.demo.hdmirotationlock=false
-debug.mdpcomp.idletime=600
-debug.enable.sglscale=1
-sys.hwc.gpu_perf_mode=1
-ro.opengles.version=196609
-ro.sf.lcd_density=480
-
-# DRM
-drm.service.enabled=true
-vidc.enc.narrow.searchrange=1
-
-# Factory reset protection
-ro.frp.pst=/dev/block/bootdevice/by-name/config
-
-# Media
-media.msm8939hw=1
-mm.enable.smoothstreaming=true
-mmp.enable.3g2=true
-media.aac_51_output_enabled=true
-mm.enable.qcom_parser=3407871
-
-# Netmgrd
-ro.use_data_netmgrd=true
-persist.data.netmgrd.qos.enable=true
-persist.data.mode=concurrent
-
 # NITZ
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
@@ -65,30 +9,15 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 
-# Perf
-ro.vendor.extension_library=libqti-perfd-client.so
-
-# QMI
-persist.data.qmi.adb_logmask=0
-
-# Radio
-rild.libargs=-d /dev/smd0
+# rild
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
-ro.telephony.call_ring.multiple=false
-ro.telephony.default_network=22,22
-ro.telephony.ril.config=simactivation
-ro.ril.multi_rat_capable=true
-persist.radio.force_on_dc=true
-persist.radio.apm_sim_not_pwdn=1
-persist.radio.sib16_support=1
-persist.radio.multisim.config=dsds
+rild.libargs=-d /dev/smd0
+persist.radio.rat_on=combine
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+ro.telephony.default_network=5
+ro.qualcomm.cabl=0
 telephony.lteOnCdmaDevice=1
-
-# Time
-persist.timed.enable=true
-
-# WIFI
-wifi.interface=wlan0
 
 qcom.bluetooth.soc=smd
 ro.bluetooth.hfp.ver=1.7
@@ -102,3 +31,119 @@ ro.qualcomm.bluetooth.map=true
 ro.qualcomm.bluetooth.nap=true
 ro.qualcomm.bluetooth.opp=true
 ro.qualcomm.bluetooth.pbap=true
+ 
+# display
+debug.sf.hw=0
+debug.egl.hw=0
+persist.hwc.mdpcomp.enable=true
+debug.mdpcomp.logs=0
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+persist.demo.hdmirotationlock=false
+debug.mdpcomp.idletime=600
+debug.enable.sglscale=1
+ro.sf.lcd_density=480
+
+# radio
+ro.com.android.mobiledata=false
+persist.radio.multisim.config=dsds
+persist.radio.start_ota_daemon = 1
+persist.radio.primarycard=true
+persist.radio.enable_mbn=false
+persist.sys.ruimenabled=true
+persist.radio.aosp_usr_pref_sel=false
+ro.com.android.dataroaming=false
+ro.com.android.mobiledata=false
+persist.radio.csvt.enabled=false
+persist.radio.rat_on=combine
+persist.radio.mt_sms_ack=20
+
+# media
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+persist.media.hls.enhancements=false
+media.stagefright.use-awesome=false
+
+# Time
+persist.timed.enable=true
+
+# Bluetooth
+bluetooth.hfp.client=1
+persist.fuse_sdcard=true
+ro.fm.transmitter=false
+
+# Netmgrd
+ro.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+
+# Media
+media.msm8939hw=0
+mm.enable.smoothstreaming=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+mm.enable.qcom_parser=3407871
+
+# Audio
+ro.qc.sdk.audio.ssr=false
+ro.qc.sdk.audio.fluencetype=fluence
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=false
+tunnel.audio.encode = false
+audio.offload.buffer.size.kb=64
+audio.offload.min.duration.secs=30
+audio.offload.video=true
+use.voice.path.for.pcm.voip=true
+audio.offload.gapless.enabled=true
+voice.playback.conc.disabled=false
+voice.record.conc.disabled=false
+voice.voip.conc.disabled=false
+audio.dolby.ds2.enabled=true
+
+# Usb
+persist.sys.usb.config=diag,serial_smd,rmnet_bam,adb
+ro.sys.usb.default.config=diag,serial_smd,rmnet_bam,adb
+persist.debug.wfd.enable=1
+persist.hwc.enable_vds=1
+
+ro.hwui.text_large_cache_height=2048
+ro.sys.fw.use_trim_settings=true
+ro.sys.fw.empty_app_percent=50
+ro.sys.fw.trim_empty_percent=100
+ro.sys.fw.trim_cache_percent=100
+ro.sys.fw.trim_enable_memory=1073741824
+ro.am.reschedule_service=true
+ro.sys.fw.bservice_enable=true
+ro.sys.fw.bservice_limit=5
+ro.sys.fw.bservice_age=5000
+
+# Camera
+persist.camera.cpp.duplication=false
+persist.camera.pip.support=0
+
+# Art
+ro.sys.fw.dex2oat_thread_count=6
+ro.core_ctl_min_cpu=4
+ro.core_ctl_max_cpu=4
+
+# DRM
+drm.service.enabled=1
+vidc.enc.narrow.searchrange=1
+
+ro.qcom.ad=1
+ro.qcom.ad.sensortype=2
+debug.ad.logs=1
+debug.als.logs=1
+ro.qcom.ad.calib.data=/system/etc/calib.cfg
+
+# Factory reset protection
+ro.frp.pst=/dev/block/bootdevice/by-name/config
+
+# GPS 
+persist.gps.qc_nlp_in_use=1
+persist.loc.nlp_name=com.qualcomm.location
+ro.gps.agps_provider=1
