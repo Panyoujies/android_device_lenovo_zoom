@@ -175,29 +175,19 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libxml2
 
-# Ramdisk
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.class_main.sh \
-    init.lenovo.crash.rc \
-    init.lenovo.log.rc \
-    init.lenovo.rc \
-    init.mdm.sh \
-    init.qcom.bms.sh \
-    init.qcom.class_core.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.factory.rc \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.syspart_fixup.sh \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
-    init.target.rc \
-    ueventd.qcom.rc
-
 # Sensors
 PRODUCT_PACKAGES += \
     calmodule.cfg
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.bt.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.usb.rc \
+    ueventd.qcom.rc
 
 # Thermal Configuration
 PRODUCT_COPY_FILES += \

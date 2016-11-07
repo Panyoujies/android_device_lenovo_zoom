@@ -48,9 +48,7 @@
 /dev/rmnet_ctrl           0660   usb        usb
 /dev/dpl_ctrl             0660   usb        usb
 
-# lenovo-sw zhangrc2 change NXP SmartPA mode begin
 /dev/i2c_smartpa              0660   media      media
-# lenovo-sw zhangrc2 change NXP SmartPA mode end
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
 
@@ -208,6 +206,9 @@
 /sys/devices/soc.0/78b5000.i2c/i2c-1/1-0045/leds/green		blink	0660	input	system
 /sys/devices/soc.0/78b5000.i2c/i2c-1/1-0045/leds/blue		blink	0660	input	system
 
+# FM
+/sys/module/radio_iris_transport/parameters/fmsmd_set 0660 system system
+
 # vm_bms
 /dev/vm_bms               0660   system     system
 /dev/battery_data         0660   system     system
@@ -220,7 +221,6 @@
 /dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
 
-#lenovo-sw lumy1 add for BRCM NFC
 /dev/bcm2079x		0660	nfc	nfc
 
 # UIO devices
@@ -231,16 +231,12 @@
 # SSR devices
 /dev/subsys_*         0640   system     system
 
-# Ultrasound device
 /dev/usf1                 0660   system     system
 
-# Ramdump devices
 /dev/ramdump*             0640   system     system
 
-#Improve Touch
 /dev/hbtp_input           0660   system     system
 /dev/hbtp_vm              0660   system     system
 /dev/jdi-bu21150          0660   system     system
 
-# Add device block for FRP
 /dev/block/platform/soc.0/7824900.sdhci/by-name/config    0660   system     system
