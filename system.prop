@@ -124,6 +124,8 @@ ro.sys.fw.bservice_age=5000
 # Camera
 persist.camera.cpp.duplication=false
 persist.camera.pip.support=0
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 
 # Art
 ro.sys.fw.dex2oat_thread_count=6
