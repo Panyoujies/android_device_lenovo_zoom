@@ -83,21 +83,19 @@ media.aac_51_output_enabled=true
 mm.enable.qcom_parser=3407871
 
 # Audio
-ro.qc.sdk.audio.ssr=false
 ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=false
-tunnel.audio.encode = false
+persist.audio.fluence.speaker=true
+av.streaming.offload.enable=true
+audio.deep_buffer.media=true
 audio.offload.buffer.size.kb=64
+audio.offload.gapless.enabled=true
 audio.offload.min.duration.secs=30
+audio.offload.pcm.16bit.enable=false
+audio.offload.pcm.24bit.enable=true
 audio.offload.video=true
 use.voice.path.for.pcm.voip=true
-audio.offload.gapless.enabled=true
-voice.playback.conc.disabled=false
-voice.record.conc.disabled=false
-voice.voip.conc.disabled=false
-audio.dolby.ds2.enabled=true
 
 # Usb
 persist.sys.usb.config=diag,serial_smd,rmnet_bam,adb
