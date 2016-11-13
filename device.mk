@@ -203,10 +203,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     ueventd.qcom.rc
 
-# Thermal Configuration
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
-
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \
