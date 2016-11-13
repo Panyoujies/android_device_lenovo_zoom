@@ -18,7 +18,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from ido device
+# Inherit from zoom device
 $(call inherit-product, device/lenovo/zoom/device.mk)
 
 # Device identifier. This must come after all inclusions
@@ -26,5 +26,5 @@ TARGET_VENDOR := Lenovo
 PRODUCT_DEVICE := zoom
 PRODUCT_NAME := full_zoom
 PRODUCT_BRAND := Lenovo
-PRODUCT_MODEL := Lenovo Z90-3
+PRODUCT_MODEL := Lenovo Z90
 PRODUCT_MANUFACTURER := Lenovo

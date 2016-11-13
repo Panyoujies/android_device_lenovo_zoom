@@ -17,9 +17,9 @@
 <resources>
 
     <!-- Default wi-fi hotspot ssid -->
-    <string name="config_wifiHotSpotSsid" translatable="false">Z90-3/7</string>
+    <string name="config_wifiHotSpotSsid" translatable="false">Lenovo Z90</string>
     <!-- Default wi-fi direct name -->
-    <string name="config_wifiDirectName" translatable="false">Z90-3/7</string>
+    <string name="config_wifiDirectName" translatable="false">Lenovo Z90</string>
 
     <!-- Is the notification LED brightness adjustable ? Used to decide if the user can set LED brightness -->
     <bool name="config_adjustableNotificationLedBrightness">true</bool>

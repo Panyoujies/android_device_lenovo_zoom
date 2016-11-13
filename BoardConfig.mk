@@ -18,7 +18,7 @@ LOCAL_PATH := device/lenovo/zoom
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
-TARGET_OTA_ASSERT_DEVICE := zoom_tdd
+TARGET_OTA_ASSERT_DEVICE := zoom_tdd,zoom_fdd
 
 # Architecture
 TARGET_ARCH := arm64
