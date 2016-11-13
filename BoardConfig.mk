@@ -85,6 +85,9 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 BOARD_USES_QCNE := true
 TARGET_LDPRELOAD := libNimsWrap.so
 
+# GPS
+TARGET_NO_RPC := true
+
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -108,9 +111,6 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
-
-# Gps
-TARGET_NO_RPC := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_zoom
