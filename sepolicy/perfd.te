@@ -1,0 +1,1 @@
+allow perfd sysfs_rqstats:dir search;
