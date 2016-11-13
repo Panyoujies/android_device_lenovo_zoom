@@ -1,0 +1,14 @@
+[
+ {
+   "repository": "android_device_qcom_common",
+   "target_path": "device/qcom/common"
+ },
+ {
+   "repository": "android_vendor_lenovo_zoom",
+   "target_path": "vendor/lenovo/zoom"
+ },
+ {
+   "repository": "android_kernel_lenovo_msm8939",
+   "target_path": "kernel/lenovo/msm8939"
+ }
+]
